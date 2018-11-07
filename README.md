@@ -1,7 +1,7 @@
 ### **MUSIC-OVERLOADED**
 Music Overloaded is a local server based simple django app that uses MySQL database.
 It is a music storage and management app. Currently, it has support only for MacOS
-and Linux Distros.
+and Linux Distros. Make sure you have MySQL installed properly on your system.
 
 Music-Overloaded is written using Python, HTML, and CSS.
 
@@ -10,9 +10,9 @@ Music-Overloaded is written using Python, HTML, and CSS.
 1. Create a new MySQL database using the following code.(Replace db_name with the name you want to give to you database)
 
   ```
-    sudo mysql -u root
+    mysql -u root -p
   ```
-  You will enter the MySQL prompt now. Write following code:
+  You will be asked for your password. Then, you will enter the MySQL prompt now. Write following code:
   
   ```
     CREATE DATABASE db_name;
