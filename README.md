@@ -17,7 +17,8 @@ Music-Overloaded is written using Python, HTML, and CSS.
   ```
     CREATE DATABASE db_name;
   ```
-
+  Press Ctrl+Z to exit MySQL.
+ 
 2. Create a new, empty folder. Let us assume the name of the folder is 'folder name'. 
 
 3. Navigate to it. (`cd _'folder name'_`)
