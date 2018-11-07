@@ -4,3 +4,4 @@ mysqlclient
 pymysql
 gunicorn==19.7.1
 dj-database-url==0.4.2
+django_mysql

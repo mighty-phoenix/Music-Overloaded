@@ -29,7 +29,7 @@ SECRET_KEY = '4t62-)l(pi0y^z_cihr07mx^bvomnw&ct4si!#p2dkp(d#q5hg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'music-overloaded.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'music-overloaded.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
