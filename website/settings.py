@@ -76,8 +76,9 @@ WSGI_APPLICATION = 'website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db',
-	'USER': 'root',
+        'NAME': 'dbal',
+	'USER': 'rootlove',
+        'PASSWORD': 'blossom',
         'HOST': 'localhost',
     }
 }
@@ -124,3 +125,4 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
