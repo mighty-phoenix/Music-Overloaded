@@ -1,4 +1,6 @@
 #TO INSTALL REQUIREMENTS
+sudo apt remove python-django
+sudo pip3 uninstall django
 sudo -H pip3 install -r $(pwd)/requirements.txt
 #TO REPLACE LOCAL SERVER SETTINGS
 echo 'Enter name of MySQL Database:'
