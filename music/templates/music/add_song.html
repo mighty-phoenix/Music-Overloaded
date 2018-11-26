@@ -1,0 +1,58 @@
+{% extends 'music/navbar.html' %}
+{% block title %}Add a New Song{% endblock %}
+{% block playlists_active %}active{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <div class="row">
+
+        <!-- Left Playlist Info -->
+        <div class="col-sm-4 col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                        <a href="{% url 'music:detail' playlist.id %}">
+                            {% if playlist.playlist_logo %}
+                                <img src="{{ playlist.playlist_logo.url }}" class="img-responsive">
+                            {% endif %}
+                        </a>
+                    <h1>{{ playlist.title }} <small>{{ playlist.genre }}</small></h1>
+                    <h2>{{ playlist.artist }}</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Song Info -->
+        <div class="col-sm-8 col-md-9">
+
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                <li role="presentation"><a href="{% url 'music:detail' playlist.id %}">View All</a></li>
+                <li role="presentation" class="active"><a href="{% url 'music:add_song' playlist.id %}">Add New Song</a></li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="page-title">Add a New Song</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                    <form class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input type="hidden" name="playlist" value="{{ playlist }}">
+                        {% include 'music/form_template.html' %}
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

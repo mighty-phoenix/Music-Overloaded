@@ -150,7 +150,7 @@ def register(request):
     return render(request, 'music/register.html', context)
 
 
-def create_playlist(request):
+def add_playlist(request):
 
     if not request.user.is_authenticated():
         return render(request, 'music/login.html')
@@ -164,10 +164,10 @@ def create_playlist(request):
         context = {
             "form": form
         }
-        return render(request, 'music/create_playlist.html', context)
+        return render(request, 'music/add_playlist.html', context)
 
 
-def create_song(request, playlist_id):
+def add_song(request, playlist_id):
 
     form = SongForm(request.POST or None, request.FILES or None)
     playlist = get_object_or_404(Playlist, pk=playlist_id)
@@ -180,7 +180,7 @@ def create_song(request, playlist_id):
                     'form': form,
                     'error_message': 'You already added that song',
                 }
-                return render(request, 'music/create_song.html', context)
+                return render(request, 'music/add_song.html', context)
         song = form.save(commit=False)
         song.playlist = playlist
         song.audio_file = request.FILES['audio_file']
@@ -192,7 +192,7 @@ def create_song(request, playlist_id):
                 'form': form,
                 'error_message': 'Audio file must be WAV, MP3, or OGG',
             }
-            return render(request, 'music/create_song.html', context)
+            return render(request, 'music/add_song.html', context)
 
         song.save()
         return render(request, 'music/detail.html', {'playlist': playlist})
@@ -200,7 +200,7 @@ def create_song(request, playlist_id):
         'playlist': playlist,
         'form': form,
     }
-    return render(request, 'music/create_song.html', context)
+    return render(request, 'music/add_song.html', context)
 
 
 def delete_playlist(request, playlist_id):
