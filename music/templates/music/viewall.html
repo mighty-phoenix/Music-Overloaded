@@ -7,7 +7,7 @@
     <!-- Playlists -->
     <div class="row">
         <div class="col-sm-12">
-            <h3 id="user-name">{{ user.username }}'s Playlists</h3>
+            <h3 id="user-name">All Songs</h3>
         </div>
         {% if playlists %}
             {% for playlist in playlists %}
@@ -16,7 +16,7 @@
                         
                             <p>{{ playlist.title }}</p>
                             <!-- View Details -->
-                            <a href="{% url 'music:detail' playlist.id %}" class="btn btn-primary btn-sm" role="button">View Songs</a>
+                            <a href="{% url 'music:detail' playlist.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
 
                             <!-- Delete Playlist -->
                             <form action="{% url 'music:delete_playlist' playlist.id %}" method="post" style="display: inline;">
@@ -34,27 +34,19 @@
 
                         </div>
                     </div>
+                </div>
                 {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
             {% endfor %}
         {% else %}
-            <div class="col-sm-12">
-                <br>
-                <a href="{% url 'music:create_playlist' %}">
-                    <button type="button" class="btn btn-success">
-                        <span class="glyphicon glyphicon-plus"></span>&nbsp; Add a Playlist
-                    </button>
-                </a>
-            </div>
         {% endif %}
     </div>
 
     <!-- If user searches and there are songs -->
-    
+    {% if songs %}
         <div class="row">
             <div class="col-sm-12">
                 <h3>Songs</h3>
             </div>
-		{% if songs %}
             <div class="col-sm-12">
                 <div class="panel panel-default">
                     <div class="panel-body">
@@ -63,7 +55,7 @@
                                 <tr>
                                     <th>Song Title</th>
                                     <th>Audio File</th>
-                                    <th>Playlist</th>
+                                    <th>Owner's Username</th>
                                     <th>Favorite</th>
                                 </tr>
                             </thead>
@@ -79,10 +71,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="{% url 'music:detail' song.playlist.id %}">
-                                                <img src="{{ song.playlist.playlist_logo.url }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" />
-                                            </a>
-                                            <a href="{% url 'music:detail' song.playlist.id %}">{{ song.playlist.title }}</a>
+                                            {{ song.playlist.user }}
                                         </td>
                                         <td>
                                             <a href="{% url 'music:favorite' song.id %}" class="btn-favorite"><span class="glyphicon glyphicon-star {% if song.is_favorite %}active{% endif %}"></span></a>

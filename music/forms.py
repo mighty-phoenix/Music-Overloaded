@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 
-from .models import Album, Song
+from .models import Playlist, Song
 
 class UserForm(forms.ModelForm):
 
@@ -19,8 +19,8 @@ class SongForm(forms.ModelForm):
         fields = ['song_title','audio_file']
 
 
-class AlbumForm(forms.ModelForm):
+class PlaylistForm(forms.ModelForm):
 
     class Meta:
-        model = Album
+        model = Playlist
         fields = ['title']

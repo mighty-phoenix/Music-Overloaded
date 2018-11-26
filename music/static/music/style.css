@@ -4,6 +4,29 @@ body, html {
 }
 .navbar{
   border-radius:0;
+  background-color: #0d2956;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+
+    color: #fff;
+    background-color: #ad0a51;
+
+}
+
+.navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand {
+
+    color: #c6ce6b;
+    background-color: transparent;
+
+}
+
+.btn-success {
+
+    color: #fff;
+    background-color: #0d2956;
+    border-color: #0d2956;
+
 }
 
 .navbar-brand{
@@ -21,7 +44,7 @@ body, html {
     font-size: 16px;
 }
 
-.album-title{
+.playlist-title{
   font-size:18px;
 }
 
@@ -65,16 +88,16 @@ body, html {
 }
 
 .card {
-    background-color: #F7F7F7;
+    background-color: transparent;
     padding: 20px 25px 30px;
     margin: 0 auto 25px;
     margin-top: 50px;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
     border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0);
 }
 
 .page-title{
@@ -119,6 +142,14 @@ body, html {
 
 .btn.btn-signin:hover,.btn.btn-signin:active,.btn.btn-signin:focus,.btn.btn-signup:hover,.btn.btn-signup:active,.btn.btn-signup:focus {
     background-color: rgb(12, 97, 33);
+}
+
+.btn.btn-favorite:active {
+    background-color: rgb(49, 58, 130);
+}
+
+.btn.btn-favorite:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 .profile-img-card {

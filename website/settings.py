@@ -24,7 +24,7 @@ SECRET_KEY = '4t62-)l(pi0y^z_cihr07mx^bvomnw&ct4si!#p2dkp(d#q5hg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'music-overloaded.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'music.middleware.RakshitMiddleWare',
 ]
 
 ROOT_URLCONF = 'website.urls'
@@ -76,9 +77,9 @@ WSGI_APPLICATION = 'website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dbal',
-	'USER': 'rootlove',
-        'PASSWORD': 'blossom',
+        'NAME': 'db',
+	'USER': 'root',
+        'PASSWORD': '12345678',
         'HOST': 'localhost',
     }
 }

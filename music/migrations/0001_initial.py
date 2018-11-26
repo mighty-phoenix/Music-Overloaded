@@ -17,10 +17,10 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Album',
+            name='Playlist',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('album_title', models.CharField(max_length=500)),
+                ('playlist_title', models.CharField(max_length=500)),
                 ('is_favorite', models.BooleanField(default=False)),
                 ('user', models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
                 ('song_title', models.CharField(max_length=250)),
                 ('audio_file', models.FileField(default='', upload_to='')),
                 ('is_favorite', models.BooleanField(default=False)),
-                ('album', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='music.Album')),
+                ('playlist', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='music.Playlist')),
             ],
         ),
     ]

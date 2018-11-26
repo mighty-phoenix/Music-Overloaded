@@ -1,7 +1,7 @@
 from django.contrib.auth.models import Permission, User
 from django.db import models
 
-class Album(models.Model):
+class Playlist(models.Model):
 
     user = models.ForeignKey(User, default=1)
     title = models.CharField(max_length=500)
@@ -13,7 +13,7 @@ class Album(models.Model):
 
 class Song(models.Model):
 
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE)
     song_title = models.CharField(max_length=250)
     audio_file = models.FileField(default='')
     is_favorite = models.BooleanField(default=False)
