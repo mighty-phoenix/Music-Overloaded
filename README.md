@@ -31,3 +31,5 @@ Music-Overloaded is written using Python, HTML, and CSS.
     git checkout master
     bash scripts/start.sh
   ```
+
+To know more about this project, [Click here](https://drive.google.com/file/d/1VWP1aIjNr19wmqbGKN_jUJ1iuUwsZwYE/view?usp=sharing)
