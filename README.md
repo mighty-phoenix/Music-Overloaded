@@ -23,7 +23,7 @@ Music-Overloaded is written using Python, HTML, and CSS.
 
 3. Navigate to it. (`cd 'folder name'`)
 
-4. Fork and clone the Music-Overloaded repo. This will create a new folder named `_'folder name'_/Music-Overloaded`.
+4. Fork and clone the Music-Overloaded repo. This will create a new folder named `'folder name'/Music-Overloaded`.
 
 5. Navigate to `'folder name'/Music-Overloaded` and run:
 
