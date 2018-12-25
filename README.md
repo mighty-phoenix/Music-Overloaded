@@ -19,13 +19,13 @@ Music-Overloaded is written using Python, HTML, and CSS.
   ```
   Press Ctrl+Z to exit MySQL.
  
-2. Create a new, empty folder. Let us assume the name of the folder is 'folder name'. 
+2. Create a new, empty folder. Let us assume the name of the folder is `'folder name'`. 
 
-3. Navigate to it. (`cd _'folder name'_`)
+3. Navigate to it. (`cd 'folder name'`)
 
 4. Fork and clone the Music-Overloaded repo. This will create a new folder named `_'folder name'_/Music-Overloaded`.
 
-5. Navigate to `_'folder name'_/Music-Overloaded` and run:
+5. Navigate to `'folder name'/Music-Overloaded` and run:
 
   ```
     git checkout master
